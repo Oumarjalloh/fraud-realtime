@@ -1,0 +1,12 @@
+{
+  "best_threshold": 0.65,
+  "best_cost": 10905.0,
+  "confusion_at_best": {
+    "tn": 22837,
+    "fp": 741,
+    "fn": 36,
+    "tp": 386
+  },
+  "cost_fp": 5.0,
+  "cost_fn": 200.0
+}
