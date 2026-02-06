@@ -13,6 +13,15 @@ from starlette.responses import Response
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
+from prometheus_client import Counter
+
+FRAUD_DECISIONS = Counter(
+    "fraud_api_decisions_total",
+    "Fraud decisions",
+    ["is_fraud"]
+)
+
+
 APP_NAME = "fraud-realtime-api"
 
 MODEL_PATH = os.getenv("MODEL_PATH", "/app/artifacts/model.pkl")
