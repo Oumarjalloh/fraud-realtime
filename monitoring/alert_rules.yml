@@ -1,0 +1,18 @@
+groups:
+  - name: fraud-alerts
+    rules:
+      - alert: HighLatencyP95
+        expr: histogram_quantile(0.95, sum(rate(request_latency_ms_bucket[2m])) by (le)) > 300
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "API p95 latency is high"
+
+      - alert: FraudSpike
+        expr: rate(fraud_predicted_total[2m]) > 2
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Fraud predictions spike detected"
