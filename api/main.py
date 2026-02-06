@@ -20,6 +20,8 @@ FRAUD_DECISIONS = Counter(
     "Fraud decisions",
     ["is_fraud"]
 )
+FRAUD_DECISIONS.labels(is_fraud=str(is_fraud).lower()).inc()
+
 
 
 APP_NAME = "fraud-realtime-api"
