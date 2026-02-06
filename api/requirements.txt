@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pydantic
+psycopg2-binary
+joblib
+numpy
+prometheus-client
